@@ -1,6 +1,27 @@
-# Website
+## The bug
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+PR: #10855
+
+When linking to a JS file in markdown, the build actually fails.
+
+```bash
+> yarn build
+yarn run v1.22.22
+$ docusaurus build
+[INFO] [en] Creating an optimized production build...
+
+✖ Client
+  Compiled with some errors in 44.12s
+
+✔ Server
+  
+
+[ERROR] Client bundle compiled with errors therefore further build is impossible.
+assets/files/test-7fc106457f8b61bbbba06a8405ca0adb.js from Terser plugin
+Unexpected line terminator [assets/files/test-7fc106457f8b61bbbba06a8405ca0adb.js:2,undefined]
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+```
 
 ## Installation
 
@@ -21,21 +42,3 @@ This command starts a local development server and opens up a browser window. Mo
 ```bash
 yarn build
 ```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-## Deployment
-
-Using SSH:
-
-```bash
-USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
