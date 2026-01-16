@@ -23,6 +23,35 @@ error Command failed with exit code 1.
 info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
 ```
 
+## expected behavior
+
+```bash
+yarn build
+yarn run v1.22.22
+$ docusaurus build
+[INFO] [en] Creating an optimized production build...
+
+✔ Client
+  Compiled successfully in 2.66s
+
+✔ Server
+  
+
+
+● Client █████████████████████████ cache (99%) shutdown IdleFileCachePlugin
+ serialize pack
+
+● Server █████████████████████████ cache (99%) shutdown IdleFileCachePlugin
+ stored
+
+[SUCCESS] Generated static files in "build".
+[INFO] Use `npm run serve` command to test your build locally.
+Done in 6.17s.
+```
+
+## workaround
+`[Test](pathname://misc/test.js)` instead of `[Test](/misc/test.js)`
+
 ## Installation
 
 ```bash
